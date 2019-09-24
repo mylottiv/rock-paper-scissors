@@ -1,0 +1,7 @@
+.floating-card{
+    box-shadow: 10px 5px 5px gray;
+}
+.chat-box{
+    border: 10px solid teal;
+    box-shadow: 5px 5px 2px black, -5px -5px 2px black;
+}

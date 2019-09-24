@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">             
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+        <!-- Moment -->
+        <script type="text/javascript" src='https://momentjs.com/downloads/moment.js'></script>
+        <!-- CSS -->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class='jumbotron'>
+            <h3>Rock, Paper, Scissors Arena!</h3>
+        </div>
+        <div class='container'>
+            <div class='row'>
+                <div class='col'>
+                    <div class='card floating-card'>
+                        <div class='card-body'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>localPlayer</h5>
+                                <p class='card-text'>Current Move:</p>
+                            </div>
+                            <div class='card-body'>
+                                <p class='card-text'>Current Record:</p>
+                                <p class='card-text'>All-Time-Record:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col align-content-center'>
+                    <div class='row'>
+                        <div class='col text-center'>
+                            <h5>Battle Arena:</h5>
+                            <p class='text-danger'>This is where status information is given</p>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col align-content-center'>
+                            <div class='row'>
+                                <div class='col text-center'>
+                                    <h5>Choose your Destiny:</h5>
+                                </div>
+                            </div> 
+                            <div class='row'>
+                                <div class='col text-center'>
+                                    <button class='btn btn-primary'>Rock</button>
+                                </div>
+                                <div class='col text-center'>
+                                    <button class='btn btn-primary'>Paper</button>
+                                </div>
+                                <div class='col text-center'>                        
+                                    <button class='btn btn-primary'>Scissors</button>               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col'>
+                    <div class='card floating-card'>
+                        <div class='card-body'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>opponentPlayer</h5>
+                                <p class='card-text'>Move received:</p>
+                            </div>
+                            <div class='card-body'>
+                                <p class='card-text'>Current Record:</p>
+                                <p class='card-text'>All-Time-Record:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row my-4'></div>
+            <div class='row'>
+                <div class='container'>
+                    <div class='col'>
+                        <div class='jumbotron'>
+                            <h4 class="display-4">Live Chat</h1>
+                            <div class="col chat-box">
+                                <p class='row'>Chat messages go here</p>
+                                <p class='row'>Most recent go here</p>
+                            </div>
+                            <hr class="my-4">
+                            <form class='form-inline'>
+                                <input type="text" class="form-control w-75" id="chat-message-input" placeholder="Message">                                  
+                                <button class="lead btn btn-primary w-25">Send</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
