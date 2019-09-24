@@ -17,7 +17,7 @@
         <div class='container'>
             <div class='row'>
                 <div class='col'>
-                    <div class='card floating-card'>
+                    <div class='card' id='local-card'>
                         <div class='card-body'>
                             <div class='card-body'>
                                 <h5 class='card-title'>localPlayer</h5>
@@ -27,10 +27,14 @@
                                 <p class='card-text'>Current Record:</p>
                                 <p class='card-text'>All-Time-Record:</p>
                             </div>
+                            <div class='card-body'>
+                                    <button class='btn btn-primary' id='local-button'>Toggle</button>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
-                <div class='col align-content-center'>
+                <div class='col align-content-center border border-success rounded' id='battle-arena' data-status='current'>
                     <div class='row'>
                         <div class='col text-center'>
                             <h5>Battle Arena:</h5>
@@ -55,11 +59,16 @@
                                     <button class='btn btn-primary'>Scissors</button>               
                                 </div>
                             </div>
+                            <div class='row mt-2'>
+                                <div class='col text-center'>
+                                        <button class='btn btn-primary' id='arena-button'>Toggle</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class='col'>
-                    <div class='card floating-card'>
+                    <div class='card floating-card' id='opponent-card'>
                         <div class='card-body'>
                             <div class='card-body'>
                                 <h5 class='card-title'>opponentPlayer</h5>
@@ -68,6 +77,9 @@
                             <div class='card-body'>
                                 <p class='card-text'>Current Record:</p>
                                 <p class='card-text'>All-Time-Record:</p>
+                            </div>
+                            <div class='card-body'>
+                                    <button class='btn btn-primary' id='opponent-button'>Toggle</button>
                             </div>
                         </div>
                     </div>
@@ -79,19 +91,20 @@
                     <div class='col'>
                         <div class='jumbotron'>
                             <h4 class="display-4">Live Chat</h1>
-                            <div class="col chat-box">
+                            <div class="col rounded" id='chat-box'>
                                 <p class='row'>Chat messages go here</p>
                                 <p class='row'>Most recent go here</p>
                             </div>
                             <hr class="my-4">
                             <form class='form-inline'>
-                                <input type="text" class="form-control w-75" id="chat-message-input" placeholder="Message">                                  
-                                <button class="lead btn btn-primary w-25">Send</a>
+                                <input type="text" class="form-control w-75" id="chat-input" placeholder="Message">                                  
+                                <button class="lead btn btn-primary w-25" id='chat-button'>Send</a>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src='assets/javascript/dom.js'></script>
     </body>
 </html>
