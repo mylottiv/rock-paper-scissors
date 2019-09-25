@@ -17,24 +17,60 @@
         <div class='container'>
             <div class='row'>
                 <div class='col'>
-                    <div class='card' id='local-card'>
+                    <div class='card floating-card' id='local-card'>
                         <div class='card-body'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>localPlayer</h5>
-                                <p class='card-text'>Current Move:</p>
+                            <!--New user is default state for header elements-->
+                            <form class='card-body form-group' id='new-user'>
+                                <h2 class='card-title'>Enter your name!</h2>
+                                <input class='form-text'></input>
+                                <button class='btn btn-primary' id='new-player-button'>Submit</button>
+                            </form>
+                            <!--Existing user header stays hidden unless triggered-->
+                            <div class='card-body hidden' id='existing-user'>
+                                <h2 class='card-title'>localPlayer</h2>
+                                <h2 class='card-text'>Current Move:</h2>
+                                <button class='btn btn-primary'>Filler</button>
                             </div>
                             <div class='card-body'>
                                 <p class='card-text'>Current Record:</p>
                                 <p class='card-text'>All-Time-Record:</p>
                             </div>
                             <div class='card-body'>
-                                    <button class='btn btn-primary' id='local-button'>Toggle</button>
+                                <button class='btn btn-primary local-button'>Toggle</button>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
-                <div class='col align-content-center border border-success rounded' id='battle-arena' data-status='current'>
+                <!--New Game battle arena template-->
+                <div class='col align-content-center border border-success rounded' id='battle-arena-new'>
+                    <div class='row'>
+                        <div class='col text-center'>
+                            <h5>Battle Arena:</h5>
+                            <p class='text-danger'>You {Status}!</p>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col align-content-center'>
+                            <div class='row'>
+                                <div class='col text-center'>
+                                    <h5>Ready to try again?</h5>
+                                </div>
+                            </div> 
+                            <div class='row'>
+                                <div class='col text-center'>
+                                    <button class='btn btn-primary' id='new-game-button'>New Game</button>
+                                </div>
+                            </div>
+                            <div class='row mt-2'>
+                                <div class='col text-center'>
+                                        <button class='btn btn-primary arena-button'>Toggle</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Current Battle Arena Template-->
+                <div class='col align-content-center border border-success rounded hidden' id='battle-arena-current'>
                     <div class='row'>
                         <div class='col text-center'>
                             <h5>Battle Arena:</h5>
@@ -61,7 +97,7 @@
                             </div>
                             <div class='row mt-2'>
                                 <div class='col text-center'>
-                                        <button class='btn btn-primary' id='arena-button'>Toggle</button>
+                                        <button class='btn btn-primary arena-button'>Toggle</button>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +107,9 @@
                     <div class='card floating-card' id='opponent-card'>
                         <div class='card-body'>
                             <div class='card-body'>
-                                <h5 class='card-title'>opponentPlayer</h5>
-                                <p class='card-text'>Move received:</p>
+                                <h2 class='card-title'>opponentPlayer</h2>
+                                <h2 class='card-text'>Move received:</h4>
+                                <button class='btn btn-primary'>Filler</button>
                             </div>
                             <div class='card-body'>
                                 <p class='card-text'>Current Record:</p>
@@ -90,7 +127,7 @@
                 <div class='container'>
                     <div class='col'>
                         <div class='jumbotron'>
-                            <h4 class="display-4">Live Chat</h1>
+                            <h4 class="display-4">Live Chat</h2>
                             <div class="col rounded" id='chat-box'>
                                 <p class='row'>Chat messages go here</p>
                                 <p class='row'>Most recent go here</p>
