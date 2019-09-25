@@ -1,7 +1,13 @@
 .floating-card{
-    box-shadow: 10px 5px 5px gray;
+    transition: box-shadow .25s ease-in-out;
+}
+.float-card{
+    box-shadow: 3px 3px 3px gray;
 }
 #chat-box{
     border: 10px solid teal;
     box-shadow: 5px 5px 2px black, -5px -5px 2px black;
+}
+.hidden{
+    display: none;
 }
