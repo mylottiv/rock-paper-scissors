@@ -22,18 +22,18 @@
                             <!--New user is default state for header elements-->
                             <form class='card-body form-group' id='new-user'>
                                 <h2 class='card-title'>Enter your name!</h2>
-                                <input class='form-text'></input>
+                                <input class='form-text' id='new-player-input'></input>
                                 <button class='btn btn-primary' id='new-player-button'>Submit</button>
                             </form>
                             <!--Existing user header stays hidden unless triggered-->
                             <div class='card-body hidden' id='existing-user'>
-                                <h2 class='card-title'>localPlayer</h2>
-                                <h2 class='card-text'>Current Move:</h2>
+                                <h2 class='card-title' id='local-name'>localPlayer</h2>
+                                <h2 class='card-text' id='local-move'>No Move Selected</h2>
                                 <button class='btn btn-primary'>Filler</button>
                             </div>
                             <div class='card-body'>
-                                <p class='card-text'>Current Record:</p>
-                                <p class='card-text'>All-Time-Record:</p>
+                                <p class='card-text' id='local-current-record'>Current Record:</p>
+                                <p class='card-text' id='local-all-time-record'>All-Time-Record:</p>
                             </div>
                             <div class='card-body'>
                                 <button class='btn btn-primary local-button'>Toggle</button>
@@ -46,14 +46,14 @@
                     <div class='row'>
                         <div class='col text-center'>
                             <h5>Battle Arena:</h5>
-                            <p class='text-danger'>You {Status}!</p>
+                            <p class='text-danger'>Welcome to Rock Paper Scissors Arena!</p>
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col align-content-center'>
                             <div class='row'>
                                 <div class='col text-center'>
-                                    <h5>Ready to try again?</h5>
+                                    <h5>Ready to play?</h5>
                                 </div>
                             </div> 
                             <div class='row'>
@@ -74,7 +74,7 @@
                     <div class='row'>
                         <div class='col text-center'>
                             <h5>Battle Arena:</h5>
-                            <p class='text-danger'>This is where status information is given</p>
+                            <p class='text-danger' id='game-status'>This is where status information is given</p>
                         </div>
                     </div>
                     <div class='row'>
@@ -86,13 +86,13 @@
                             </div> 
                             <div class='row'>
                                 <div class='col text-center'>
-                                    <button class='btn btn-primary'>Rock</button>
+                                    <button class='btn btn-primary move-button' data-move='rock'>Rock</button>
                                 </div>
                                 <div class='col text-center'>
-                                    <button class='btn btn-primary'>Paper</button>
+                                    <button class='btn btn-primary move-button' data-move='paper'>Paper</button>
                                 </div>
                                 <div class='col text-center'>                        
-                                    <button class='btn btn-primary'>Scissors</button>               
+                                    <button class='btn btn-primary move-button' data-move='scissors'>Scissors</button>               
                                 </div>
                             </div>
                             <div class='row mt-2'>
@@ -107,13 +107,13 @@
                     <div class='card floating-card' id='opponent-card'>
                         <div class='card-body'>
                             <div class='card-body'>
-                                <h2 class='card-title'>opponentPlayer</h2>
-                                <h2 class='card-text'>Move received:</h4>
+                                <h2 class='card-title' id='opponent-name'>opponentPlayer</h2>
+                                <h2 class='card-text' id='opponent-move'>Move received:</h4>
                                 <button class='btn btn-primary'>Filler</button>
                             </div>
                             <div class='card-body'>
-                                <p class='card-text'>Current Record:</p>
-                                <p class='card-text'>All-Time-Record:</p>
+                                <p class='card-text' id='opponent-current-record'>Current Record:</p>
+                                <p class='card-text' id='opponent-all-time-record'>All-Time-Record:</p>
                             </div>
                             <div class='card-body'>
                                     <button class='btn btn-primary' id='opponent-button'>Toggle</button>
@@ -142,6 +142,25 @@
                 </div>
             </div>
         </div>
-        <script src='assets/javascript/dom.js'></script>
+        <!-- The core Firebase JS SDK-->
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+        <!-- Firebase Analytics SDK -->
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+        <!-- Firestore SDK-->
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+        <!-- Original Javascript-->
+        <script src='assets/javascript/initGameButtons.js'></script>
+        <script src='assets/javascript/initFirestore.js'></script>
+        <script src='assets/javascript/newGame.js'></script>
+        <script src='assets/javascript/hostGame.js'></script>
+        <script src='assets/javascript/joinGame.js'></script>
+        <script src='assets/javascript/newPlayer.js'></script>
+        <script src='assets/javascript/loadPlayer.js'></script>
+        <script src='assets/javascript/playerNameUpdate.js'></script>
+        <script src='assets/javascript/playerRecordUpdate.js'></script>
+        <script src='assets/javascript/moveUpdate.js'></script>
+        <script src='assets/javascript/battle.js'></script>
+        <script src='assets/javascript/startup.js'></script>
+        <!--<script src='assets/javascript/dom.js'></script>-->
     </body>
 </html>
