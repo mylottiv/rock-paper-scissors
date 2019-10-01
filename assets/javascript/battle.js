@@ -1,6 +1,7 @@
 function battle (move, playerType, otherMove) {
 
-    // Sorts out local and opponent players
+    // Initializes local and opponent players
+    // Eventually this sorting shold be handled by move update, so only two arguments get passed
     let localPlayer = {
         ID: localStorage.getItem('localPlayerID'),
         currentRecord: JSON.parse(localStorage.getItem('localPlayer')).currentRecord,
@@ -12,6 +13,8 @@ function battle (move, playerType, otherMove) {
 
     // If tie
     if (localPlayer.move === opponentMove) {
+
+        console.log("Battle...it's a draw!");
 
         // Updates local player current record ties
         localPlayer.currentRecord.ties++;
@@ -25,6 +28,8 @@ function battle (move, playerType, otherMove) {
     ((localPlayer.move === 'Rock') && (opponentMove === 'Scissors')) ||
     ((localPlayer.move === 'Scissors') && (opponentMove === 'Paper'))) {
         
+        console.log("Battle...you win!");
+
         // Updates local player current record wins
         localPlayer.currentRecord.wins++;
         
@@ -37,6 +42,8 @@ function battle (move, playerType, otherMove) {
     else if (((localPlayer.move === 'Paper') && (opponentMove === 'Scissors')) ||
     ((localPlayer.move === 'Rock') && (opponentMove === 'Paper')) ||
     ((localPlayer.move === 'Scissors') && (opponentMove === 'Rock'))) {
+
+        console.log("Battle...you lose!")
         
         // Updates local player current record losses
         localPlayer.currentRecord.losses++;
@@ -45,7 +52,7 @@ function battle (move, playerType, otherMove) {
         $('#game-status').text(`${opponentMove} beats ${localPlayer.move}!<br>You lose!`);
     }
 
-    // Updates firestore currentRecord only for local player (other client will handle opponent record
+    // Updates firestore currentRecord only for local player (other client will handle opponent record)
     firestoreUsers.doc(localPlayer.ID).set({
 
         // Reinitializes player move

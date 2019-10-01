@@ -4,7 +4,9 @@ function hostGame(playerID) {
         hostID: playerID,
         joinID: 'none',
         open: true,
-        complete: false
+        complete: false,
+        // A debug flag
+        matches: true
     })
     .then(doc => {
         
@@ -14,16 +16,17 @@ function hostGame(playerID) {
         localStorage.setItem('gameID', gameID)
 
         // Sets game listener for a joiner
-        firestoreGames.doc(gameID).onSnapshot(doc => {
+        firestoreGames.doc(gameID).onSnapshot(snapshot => {
 
             // If an opponent has joined
-            if (doc.data().joinID !== 'none') {
+            if (snapshot.data().joinID !== 'none') {
                 
                 // Save opponentID to localstorage
-                localStorage.setItem('opponentID', doc.data().joinID);
+                localStorage.setItem('opponentID', snapshot.data().joinID);
 
                 // Load new opponent
-                loadPlayer(doc.data().joinID, 'opponent');
+                console.log('Opponent found! Loading', snapshot.data().joinID)
+                loadPlayer(snapshot.data().joinID, 'opponent');
 
             }
 

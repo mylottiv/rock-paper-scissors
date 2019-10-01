@@ -1,7 +1,5 @@
 function moveUpdate(move, playerType) {
 
-    const playerTypes = ['local', 'opponent']
-
     // Checks if move exists
     if (move !== 'none'){
 
@@ -10,9 +8,10 @@ function moveUpdate(move, playerType) {
         $(`#${playerType}-move`).text(newText);
         
         // Checks if both players have chosen moves
-        let otherType = (playerType === 'local') ? 1 :0
-        let otherPlayer = JSON.parse(localStorage.getItem(`${playerTypes[otherType]}Player`))
-        if (otherPlayer.move !== '') {
+        let otherType = (playerType === 'local') ? 'opponent' : 'local'
+        let otherPlayer = JSON.parse(localStorage.getItem(`${otherType}Player`))
+        if (otherPlayer.move !== 'none') {
+            // If both moves have been chosen and initialized then call the battle function
             battle(move, playerType, otherPlayer.move)
         }
     }
